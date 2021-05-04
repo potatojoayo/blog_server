@@ -6,7 +6,7 @@ export const insertPost = async (post: PostType) => {
 }
 
 export const getAll = async () => {
-	return await Post.find({})
+	return await Post.find({}).sort({date: -1})
 }
 
 export const updatePost = async (post:PostType) => {
