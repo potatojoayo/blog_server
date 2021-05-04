@@ -1,0 +1,7 @@
+{
+	"watch": ".",
+	"ignore_watch": "posts",
+	"watch_options": {
+		"followSymlinks": false
+	}
+}

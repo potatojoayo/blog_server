@@ -1,0 +1,10 @@
+{
+    "script": "src/index.ts",
+    "watch": true,
+    "ignore_watch": ["node_modules", "posts"],
+    "watch_options": {
+        "followSymlinks": false
+    },
+    "name": "potatojoayo server"
+}
+
