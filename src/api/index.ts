@@ -1,13 +1,19 @@
-import dotenv from 'dotenv'
-import mongoose,{ConnectOptions} from 'mongoose'
+import dotenv from "dotenv";
+import mongoose, { ConnectOptions } from "mongoose";
 
-dotenv.config({path: '/home/ubuntu/server/.env'}) 
+dotenv.config({ path: "/home/ubuntu/blog_server/.env" });
 
 export const initDB = () => {
-	const MONGO_PASSWORD = process.env.MONGO_PASSWORD
-	const connectOption: ConnectOptions = { 
-		useNewUrlParser: true,
-		useUnifiedTopology: true
-}
-	mongoose.connect(`mongodb+srv://potatojoayo:${MONGO_PASSWORD}@potatojoayo.frlqf.mongodb.net/Blog?retryWrites=true&w=majority`, connectOption)
-}
+  const URI = process.env.MONGO_URI + "";
+  const connectOption: ConnectOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  };
+  try {
+    mongoose.connect(URI, connectOption, () => {
+      console.log("connected to db");
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
