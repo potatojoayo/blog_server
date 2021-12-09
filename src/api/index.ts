@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import mongoose, { ConnectOptions } from "mongoose";
 
-dotenv.config({ path: "/home/ubuntu/blog_server/.env" });
+dotenv.config({ path: "/home/ubuntu/blog/server/.env" });
 
 export const initDB = () => {
   const URI = process.env.MONGO_URI + "";
